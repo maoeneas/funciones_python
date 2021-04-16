@@ -19,17 +19,59 @@ import random
 
 
 def imprimir_nombre(nombre, apellido):
-    pass
     # En este lugar debe colocar el "print" e imprimir
     # en pantalla el nombre y apellido que vienen por parámetro
     # print(.....)
-
+    print("El nombre y apellido es: ")
+    print(nombre, apellido,"\n")
 
 def promedio(numeros):
+    suma_numeros = 0
+    veces_numeros = 0
+
+    for i in numeros:
+        suma_numeros += i
+        veces_numeros += 1
+    promedio = suma_numeros / veces_numeros
+    print("El promedio es el siguiente:")
+    return promedio
+def ordenar(numeros):
+    for i in numeros:
+        orden=sorted(numeros)
+    print(orden) 
+    pass
+
+def lista_aleatoria (inicio, fin, cantidad):
+    aleatoria = []
+    for i in range(cantidad):
+        numero = random.randrange(inicio, fin+1)
+        aleatoria.append(numero)
+        return aleatoria
+
+def contar(lista, n_veces):
+    lista.count
+    print(contar)
+
+def promedio_varios():   # esta es otra funcion que vi en internet y la lleve a cabo!!
     # Alumno:
     # 1) calcule el promedio
     # 2) use "return" para retornar ese valor
-    pass  # Cuando termine de implementar está función borrar "pass"
+    contador = 0
+    suma = 0
+    numero = 1
+    while numero != 0:
+        numero=int(input("ingrese numero entero a promediar, (o bien 0 para terminar): "))
+        suma += numero
+        contador +=1
+
+    if contador ==0:
+        print("No Ha digitado ningun numero.")
+
+    else:
+        contador -=1
+        promedio=suma/contador
+        print("el promedio de los {} numeros es de {}:".format(contador,promedio))
+        return promedio
 
 
 def ej1():
@@ -39,15 +81,15 @@ def ej1():
     # Esa función ya se encuentra a medio armar al principio de este archivo.
     # Debe cumpletar la función para que se imprima en pantalla su nombre y apellido
     # Debe invocar a la función como:
-    imprimir_nombre('mi_nombre', 'mi_apellido')
+    imprimir_nombre('marcelo', 'carranza')
 
     # Reemplazar por su nombre y apellido los textos
 
 
 def ej2():
     # Ejercicios con funciones del sistema
-    numeros = [2, 4, 6, 8, 10, 12]
-
+    
+    
     '''
     Realice una funcion llamada "promedio" la cual
     reciba como parámetro una lista de números y calcule
@@ -80,11 +122,14 @@ def ej2():
     # promedio_re
 
     # Luego imprimir en pantalla el valor resultante, tal que:
-
+    numeros=0
+    promedio(numeros)
+    resultado= promedio
+    print (resultado) # no se porque me muestra este dato en lugar del resultado: function promedio at 0x0000020DE7747D30>
 
 def ej3():
     # Ejercicios de listas y métodos
-    numeros = [2, 4, 6, 8, 10, 12]
+    numeros = [69, 12, 15, 36, 99, 112]
 
     '''
     Generar una una nueva funcion que se llame "ordenar",
@@ -101,13 +146,14 @@ def ej3():
     # lista_ordenada = ordenar(numeros)
     # Imprimir en pantalla "lista_ordenada" que tendrá
     # los valores retornado por la función ordenar
-
+    menor_a_mayor = ordenar(numeros)
+    print(menor_a_mayor,"\n")
 
 def ej4():
     # Ejercicios con modulos del sistema
-    inicio = 0
-    fin = 10
-    cantidad = 5
+    inicio = 10
+    fin = 100
+    cantidad = 12
 
     # Ejemplo de como obtener un numero aleatorio
     # entre inicio y fin
@@ -141,6 +187,13 @@ def ej4():
     # print(mi_lista_aleatorio)
 
 
+    # Este ejercicio lo chusmee de un compañero porque se me re complico!!!, lo que no entiendo es:
+    # cantidad: ¿toma en mi caso 12 numeros del 10 al 100, y luego hace ramdom entre esos 12? ¿para que? 
+    mi_lista_aleatorio = lista_aleatoria(inicio, fin, cantidad)
+    print ("Los numeros al azar serian:")
+    print(mi_lista_aleatorio,"\n")
+
+
 def ej5():
     # Ejercicios de listas y métodos
     cantidad_numeros = 5
@@ -162,12 +215,22 @@ def ej5():
     # lista_numeros = lista_aleatoria(...,...,cantidad_numeros)
     # Luego quiero averiguar cuantas veces se repite el numero 3
     # cantidad_tres = contar(lista_numeros, 3)
-
+    inicio=1
+    final= 9
+    consulta= 3
+    lista_numeros = lista_aleatoria(inicio,final,cantidad_numeros)
+    print("Lista de numeros:")
+    print(lista_numeros)
+    # no me arroja el resultado!!!, por un lado la funcion aleatoria en este ejercicio medio que no va!!, 
+    # y por el otro lado, no logro que detecte que el 3 solo aparece una vez!!
+    tres_veces = contar(lista_numeros, 3)
+    print("Numero de veces que se repite {}: ".format(consulta))
+    print("la cantidad de veces que se retite el 3 son:",tres_veces)
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    ej1()
+    # ej1()
     # ej2()
     # ej3()
     # ej4()
-    # ej5()
+    ej5()
