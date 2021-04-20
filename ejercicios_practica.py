@@ -36,20 +36,20 @@ def promedio(numeros):
     print("El promedio es el siguiente:")
     return promedio
 def ordenar(numeros):
-    for i in numeros:
+    for i in numeros: # aquí no hace falta el for si vas a usar sorted.
         orden=sorted(numeros)
     print(orden) 
-    pass
+    pass # Aquí debería ser return orden
 
 def lista_aleatoria (inicio, fin, cantidad):
     aleatoria = []
     for i in range(cantidad):
         numero = random.randrange(inicio, fin+1)
         aleatoria.append(numero)
-        return aleatoria
+        return aleatoria # El return tiene que quedar fuera del for!
 
 def contar(lista, n_veces):
-    lista.count
+    lista.count # esta función tendría que ser     return lista.count(n_veces) y listo :D
     print(contar)
 
 def promedio_varios():   # esta es otra funcion que vi en internet y la lleve a cabo!!
@@ -124,7 +124,7 @@ def ej2():
     # Luego imprimir en pantalla el valor resultante, tal que:
     numeros=0
     promedio(numeros)
-    resultado= promedio
+    resultado= promedio # --> aquí tenes que hacer resultado = promedio(numeros) porque sino te devuelve los datos de la función!
     print (resultado) # no se porque me muestra este dato en lugar del resultado: function promedio at 0x0000020DE7747D30>
 
 def ej3():
@@ -189,6 +189,7 @@ def ej4():
 
     # Este ejercicio lo chusmee de un compañero porque se me re complico!!!, lo que no entiendo es:
     # cantidad: ¿toma en mi caso 12 numeros del 10 al 100, y luego hace ramdom entre esos 12? ¿para que? 
+    # Para practicar jajajaj ;D
     mi_lista_aleatorio = lista_aleatoria(inicio, fin, cantidad)
     print ("Los numeros al azar serian:")
     print(mi_lista_aleatorio,"\n")
@@ -223,6 +224,9 @@ def ej5():
     print(lista_numeros)
     # no me arroja el resultado!!!, por un lado la funcion aleatoria en este ejercicio medio que no va!!, 
     # y por el otro lado, no logro que detecte que el 3 solo aparece una vez!!
+    
+    # Tenes que revisar los returns de las funciones, además la función contar tiene otro problema, 
+    # ya te lo agregué ;D
     tres_veces = contar(lista_numeros, 3)
     print("Numero de veces que se repite {}: ".format(consulta))
     print("la cantidad de veces que se retite el 3 son:",tres_veces)
